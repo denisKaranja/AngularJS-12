@@ -1,11 +1,17 @@
 'use strict';
 
-/* jasmine specs for controllers go here */
+/* Number of phones displayed test */
 
-describe('controllers', function() {
+describe('PhoneListCtrl', function(){
 
-  it("should do something", function() {
+  // load the phonecatApp before each test
+  beforeEach(module('phonecatApp'));
 
-  });
+  it('should create "phones" model with 3 phones', inject(function($controller) {
+    var scope = {},
+        ctrl = $controller('PhoneListCtrl', {$scope:scope});
+
+    expect(scope.phones.length).toBe(3);
+  }));
 
 });
