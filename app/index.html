@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="phonecatApp">
 <head>
   <meta charset="utf-8">
   <title>My HTML File</title>
@@ -18,7 +18,10 @@
     </ul>
 
 
-
+    <table>
+      <tr><th>row number</th></tr>
+      <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i+1}}</td></tr>
+    </table>
 
   </body>
 </html>
