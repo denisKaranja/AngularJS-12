@@ -40,7 +40,8 @@ describe("PhoneCat App", function(){
           });
         }
 
-        query.sendKeys('tablet'); //let's narrow the dataset to make the test assertions shorter
+        //let's narrow the dataset to make the test assertions shorter
+        query.sendKeys('tablet');
 
         expect(getNames()).toEqual([
           "Motorola XOOM\u2122 with Wi-Fi",
