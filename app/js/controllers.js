@@ -1,7 +1,10 @@
 'use strict';
 
 /* Controllers */
-var phonecatApp = angular.module('phonecatApp', []);
+var phonecatApp = angular.module('phonecatApp', [
+    'ngRoute',
+    'phonecatControllers'
+  ]);
 
 phonecatApp.controller('PhoneListCtrl', ["$http", "$scope", function($http, $scope){
   $http.get("phones/phones.json").success(function(data){
@@ -11,3 +14,13 @@ phonecatApp.controller('PhoneListCtrl', ["$http", "$scope", function($http, $sco
   $scope.orderProp = "age";
 
 }]);
+
+
+
+
+
+
+
+
+
+
