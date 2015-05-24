@@ -9,19 +9,27 @@
   <script src="js/controllers.js"></script>
 </head>
   <body ng-controller="PhoneListCtrl">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
 
-    <ul>
-      <li ng-repeat="phone in phones">
-        <span>{{phone.name}}</span>
-        <p>{{phone.snippet}}</p>
-      </li>
-    </ul>
+      Search: <input ng-model="query">
 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
 
-    <table>
-      <tr><th>row number</th></tr>
-      <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i+1}}</td></tr>
-    </table>
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query">
+          {{phone.name}}
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
 
   </body>
 </html>
