@@ -7,6 +7,7 @@ describe("PhoneCat App", function(){
     beforeEach(function(){
       browser.get("app/index.html");
 
+      // repeater test
       it("should filter the phone list as a user types into the search box", function(){
         var phoneList = element.all(by.repeater("phone in phones"));
         var query = element(by.model("query"));
@@ -18,6 +19,7 @@ describe("PhoneCat App", function(){
         expect(phoneList.count()).toBe(2);
       });
 
+      //  filter test
       it('should display the current filter value in the title bar', function() {
         query.clear();
         expect(browser.getTitle()).toMatch(/Google Phone Gallery:\s*$/);
@@ -29,6 +31,7 @@ describe("PhoneCat App", function(){
     });
   });
 });
+
 
 
 
