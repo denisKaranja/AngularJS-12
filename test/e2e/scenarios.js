@@ -97,6 +97,18 @@ describe("PhoneCat App", function(){
     });
   });
 
+  describe('Phone detail view', function() {
+
+    beforeEach(function() {
+      browser.get('app/index.html#/phones/nexus-s');
+    });
+
+
+    it('should display nexus-s page', function() {
+      expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
+    });
+  });
+
 });
 
 
