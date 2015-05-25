@@ -8,8 +8,6 @@
   float: left;
 }
 
-...
-
 img.phone {
   float: left;
   margin-right: 3em;
@@ -23,4 +21,12 @@ img.phone {
 
 img.phone:first-child {
   display: block;
-  }
+}
+
+.offset-top{
+  margin-top: 3%;
+}
+
+.hr-divider{
+  border: 2px solid gray;
+}

@@ -1,39 +1,52 @@
-<div class="phone-images">
-  <img ng-src="{{img}}"
-       class="phone"
-       ng-repeat="img in phone.images"
-       ng-class="{active:mainImageUrl==img}">
+<div class="container-fluid offset-top col-md-6 col-md-offset-3 well">
+
+<div>
+  <a  href = "/app" class="btn btn-danger">Back to phone list</a>
+  <h2 class="col-md-offset-5">{{phone.name}}</h2>
 </div>
+  <div class="phone-images">
+    <img ng-src="{{img}}"
+         class="phone img img-polaroid"
+         ng-repeat="img in phone.images"
+         ng-class="{active:mainImageUrl==img}"
+         height="100"
+         width="100">
+  </div>
+  <p>{{phone.description}}</p>
 
-<h1>{{phone.name}}</h1>
+  <ul class="phone-thumbs">
+    <li ng-repeat="img in phone.images">
+      <img
+      ng-src="{{img}}"
+      ng-mouseenter="setImage(img)"
+      height="100"
+      width="100"
+      class="img img-polaroid">
+    </li>
+  </ul>
 
-<p>{{phone.description}}</p>
 
-<ul class="phone-thumbs">
-  <li ng-repeat="img in phone.images">
-    <img ng-src="{{img}}" ng-mouseenter="setImage(img)">
-  </li>
-</ul>
+  <ul class="specs">
+    <li>
+      <span>Availability and Networks</span>
+      <dl>
+        <dt>Availability</dt>
+        <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+      </dl>
+    </li>
 
-
-<ul class="specs">
-  <li>
-    <span>Availability and Networks</span>
     <dl>
-      <dt>Availability</dt>
-      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{phone.connectivity.infrared | checkmark}}</dd>
+      <dt>GPS</dt>
+      <dd>{{phone.connectivity.gps | checkmark}}</dd>
     </dl>
-  </li>
 
-  <dl>
-    <dt>Infrared</dt>
-    <dd>{{phone.connectivity.infrared | checkmark}}</dd>
-    <dt>GPS</dt>
-    <dd>{{phone.connectivity.gps | checkmark}}</dd>
-  </dl>
+    <li>
+      <span>Additional Features</span>
+      <dd>{{phone.additionalFeatures}}</dd>
+    </li>
+  </ul>
 
-  <li>
-    <span>Additional Features</span>
-    <dd>{{phone.additionalFeatures}}</dd>
-  </li>
-</ul>
+
+</div>

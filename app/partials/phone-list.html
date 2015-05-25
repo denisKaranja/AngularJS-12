@@ -1,23 +1,23 @@
-<div class="container-fluid">
+<div class="container-fluid offset-top">
   <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
 
+    <div class="col-md-6 col-md-offset-3">
+      <!--Body content-->
+
+      <!--Sidebar content-->
+      <h3 class="col-md-offset-4">Search box</h3>
       <input ng-model="query" placeholder="Search a phone" class="form-control">
       Sort by:
-      <select ng-model="orderProp">
+      <select ng-model="orderProp" class="form-control">
         <option value="name">Alphabetical</option>
         <option value="age">Newest</option>
       </select>
+      <hr class="hr-divider">
 
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
-
-      <ul class="phones">
+      <ul class="phones well">
         <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
             class="thumbnail phone-listing">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" height="100" width="100"></a>
           <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
           <p>{{phone.snippet}}</p>
         </li>
